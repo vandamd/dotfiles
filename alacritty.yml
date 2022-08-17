@@ -1,0 +1,62 @@
+# 
+#             _ _             _                 _ _   _                            __ _       
+#            | ( )           | |               (_) | | |                          / _(_)      
+#   __   ____| |/ ___    __ _| | __ _  ___ _ __ _| |_| |_ _   _    ___ ___  _ __ | |_ _  __ _ 
+#   \ \ / / _` | / __|  / _` | |/ _` |/ __| '__| | __| __| | | |  / __/ _ \| '_ \|  _| |/ _` |
+#    \ V / (_| | \__ \ | (_| | | (_| | (__| |  | | |_| |_| |_| | | (_| (_) | | | | | | | (_| |
+#     \_/ \__,_| |___/  \__,_|_|\__,_|\___|_|  |_|\__|\__|\__, |  \___\___/|_| |_|_| |_|\__, |
+#                                                          __/ |                         __/ |
+#                                                         |___/                         |___/ 
+
+# This is Vandam Dinh's alacritty configuration file
+
+font:
+  normal:
+    family: JetBrains Mono Nerd Font
+    style: Regular
+
+  bold:
+    family: JetBrains Mono Nerd Font
+    style: Bold
+
+  italic:
+    family: JetBrains Mono Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: JetBrains Mono Nerd Font
+    style: Bold Italic
+
+  size: 6
+
+# Colors (Taerminal)
+colors:
+  # Default colors
+  primary:
+    background: '0x1c1c1c'
+    foreground: '0xf0f0f0'
+  cursor:
+    background: '0xf0f0f0'
+    foreground: '0x26282a'
+
+  # Normal colors
+  normal:
+    black:   '0x26282a'
+    red:     '0xff8878'
+    green:   '0xb4fb73'
+    yellow:  '0xfffcb7'
+    blue:    '0x8bbce5'
+    magenta: '0xffb2fe'
+    cyan:    '0xa2e1f8'
+    white:   '0xffffff'
+
+  # Bright colors
+  bright:
+    black:   '0x6f6f6f'
+    red:     '0xfe978b'
+    green:   '0xd6fcba'
+    yellow:  '0xfffed5'
+    blue:    '0xc2e3ff'
+    magenta: '0xffc6ff'
+    cyan:    '0xc0e9f8'
+    white:   '0xffffff'
