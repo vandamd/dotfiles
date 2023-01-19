@@ -1,13 +1,3 @@
-#
-#                         _                 _               _                        __ _       
-#                        | |               ( )             | |                      / _(_)      
-#   __   ____ _ _ __   __| | __ _ _ __ ___ |/ ___   _______| |__     ___ ___  _ __ | |_ _  __ _ 
-#   \ \ / / _` | '_ \ / _` |/ _` | '_ ` _ \  / __| |_  / __| '_ \   / __/ _ \| '_ \|  _| |/ _` |
-#    \ V / (_| | | | | (_| | (_| | | | | | | \__ \  / /\__ \ | | | | (_| (_) | | | | | | | (_| |
-#     \_/ \__,_|_| |_|\__,_|\__,_|_| |_| |_| |___/ /___|___/_| |_|  \___\___/|_| |_|_| |_|\__, |
-#                                                                                          __/ |
-#                                                                                         |___/ 
-
 # This is Vandam Dinh's zsh configuration file
 
 # If you come from bash you might have to change your $PATH.
@@ -24,33 +14,30 @@ ZSH_THEME="gentoo"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+# Aliases
+alias zshconfig="nvim ~/.zshrc"
+alias docs="cd /Users/vandam/Library/Mobile\ Documents/com~apple~CloudDocs/Documents"
+alias vimconfig="nvim ~/.vimrc"
+alias nvimconfig="nvim ~/.config/nvim/init.vim"
+alias nvimps="nvim ~/.config/nvim/plugins.vim"
+alias nvimpc="nvim ~/.config/nvim/plugins_config.vim"
+alias y2="cd ~/Documents/Work/University\ of\ Bristol/Year\ 2"
+alias y1="cd ~/Documents/Work/University\ of\ Bristol/Year\ 1"
+alias d="cd && cd Developer"
+alias re="cd && cd Developer/Repositories"
+alias vi="nvim"
+alias vim="nvim"
+alias ts="echo $'ala - Applied Linear Algebra\nitd - Intro to Data Science\nppp - Principles of Professional Practice\nemat - Engineering Mathematics\nmdm2 - Mathematical and Data Modelling'"
+alias tasks="task list"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# Wiki
+alias wiki="nvim vimwiki/index.md"
+alias q="nvim vimwiki/Scratchpad.md"
 
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias i3config="vim ~/.config/i3/config"
-alias docs="cd /home/vandam/Documents"
-alias update="sudo pacman -Syu"
-alias vimconfig="vim ~/.vimrc"
-alias alacrittyconf="vim ~/.config/alacritty/alacritty.yml"
+# Starship
+eval "$(starship init zsh)"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/vandam/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/vandam/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/vandam/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/vandam/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
