@@ -16,6 +16,7 @@ brew "zola"                         # Static Site Generator
 brew "pyenv"                        # Python Version Manager
 brew "python"                       # Python
 brew "thefuck"                      # Corrects Mistyped Commands
+brew "stow"                         # Symlink Manager
 
 # Applications
 cask "arc"                          # Browser
