@@ -8,42 +8,33 @@ tap "homebrew/cask-drivers"
 
 cask_args appdir: "/Applications"
 
-brew "bitwarden-cli"
-brew "starship"
-brew "tree"
-brew "zola"
-brew "neofetch"
-brew "mas"
-brew "pyenv"
-brew "python"
-brew "pyenv"
-brew "rust"
-brew "node"
-brew "emacs-plus"
+# CLI Tools
+brew "mas"                          # Mac App Store CLI
+brew "starship"                     # Minimal Shell Prompt
+brew "bitwarden-cli"                # Password Manager
+brew "zola"                         # Static Site Generator
+brew "pyenv"                        # Python Version Manager
+brew "python"                       # Python
+brew "thefuck"                      # Corrects Mistyped Commands
 
-cask "altserver"
-cask "balenaetcher"
-cask "cron"
-cask "dozer"
-cask "imageoptim"
-cask "inkscape"
-cask "iterm2"
-cask "jabref"
-cask "karabiner-elements"
-cask "keka"
-cask "mouse-fix"
-cask "microsoft-excel"
-cask "notion"
-cask "obsidian"
-cask "prismlauncher"
-cask "pictogram"
-cask "raycast"
-cask "shottr"
-cask "skim"
-cask "spotify"
-cask "steelseries-exactmouse-tool"
-cask "todoist"
-cask "wooshy"
+# Applications
+cask "arc"                          # Browser
+cask "iterm2"                       # Terminal
+cask "obsidian"                     # Note Taking App
+cask "spotify"                      # Music
 
-mas "Craft", id: 1487937127
-mas "Pure Paste", id: 1611378436
+# Tools/Misc
+cask "dozer"                        # Hide Menu Bar Icons
+cask "imageoptim"                   # Image Optimiser Tool
+cask "inkscape"                     # Drawing Tool
+cask "karabiner-elements"           # Keyboard Remapper
+cask "keka"                         # Archiver
+cask "pictogram"                    # App Icon Changer
+cask "raycast"                      # Spotlight Alternative
+cask "shottr"                       # Screenshot Tool
+cask "skim"                         # PDF Reader
+cask "steelseries-exactmouse-tool"  # Raw Mouse Acceleration
+
+# App Store
+mas "Pure Paste", id: 1611378436    # Clipboard Manager
+mas "Sleeve", id: 1606145041        # Mini Player

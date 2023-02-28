@@ -17,7 +17,7 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 filetype plugin on
 filetype indent on
 set nocompatible
-set so=7
+set so=10
 set wildmenu
 set ruler
 set ignorecase
@@ -43,6 +43,7 @@ set tabstop=4
 set ai
 set si
 set wrap
+set tw=72
 set colorcolumn=72
 highlight ColorColumn ctermbg=238
 map <space> /
@@ -59,6 +60,20 @@ set number relativenumber
 set laststatus=2
 set clipboard+=unnamedplus
 
+setlocal spell
+set spelllang=en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+hi clear SpellBad
+hi clear SpellCap
+hi clear SpellLocal
+hi clear Conceal
+hi clear MatchParen
+hi SpellBad cterm=underline ctermfg=red
+hi SpellCap cterm=underline ctermfg=blue
+hi SpellLocal cterm=underline ctermfg=green
+hi Conceal ctermfg=blue 
+hi MatchParen ctermbg=232 ctermfg=red 
+
 
 " ------ Keybinds ------
 " Toggle NERDTree
@@ -68,7 +83,7 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
-" Vimwiki
+" VimWiki
 nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
 nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
 
@@ -80,5 +95,6 @@ source ~/.config/nvim/plugins.vim
 
 " ------ Plugin Config ------
 source ~/.config/nvim/plugins_config.vim
+
 
 

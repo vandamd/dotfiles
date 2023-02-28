@@ -9,6 +9,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # Theme 
 ZSH_THEME="gentoo"
 
+# Case insensitive completion
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -25,17 +29,18 @@ alias y2="cd ~/Documents/Work/University\ of\ Bristol/Year\ 2"
 alias y1="cd ~/Documents/Work/University\ of\ Bristol/Year\ 1"
 alias d="cd && cd Developer"
 alias re="cd && cd Developer/Repositories"
-alias vi="nvim"
+alias v="nvim"
 alias vim="nvim"
-alias ts="echo $'ala - Applied Linear Algebra\nitd - Intro to Data Science\nppp - Principles of Professional Practice\nemat - Engineering Mathematics\nmdm2 - Mathematical and Data Modelling'"
-alias tasks="task list"
 
 # Wiki
-alias wiki="nvim vimwiki/index.md"
-alias q="nvim vimwiki/Scratchpad.md"
+alias wiki="cd && nvim vimwiki/index.md"
+alias q="cd && nvim vimwiki/Scratchpad.md"
 
 # Starship
 eval "$(starship init zsh)"
+
+# FUCK
+eval $(thefuck --alias)
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"

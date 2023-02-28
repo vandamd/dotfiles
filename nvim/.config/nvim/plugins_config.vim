@@ -31,6 +31,9 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+" Vimwiki - No wrapping, fixes ugly links
+autocmd Filetype markdown setlocal nowrap
+
 " Vimwiki - Find All Incomplete Tasks
 function! VimwikiFindAllIncompleteTasks()
   VimwikiSearch /* \[ \]/
@@ -43,8 +46,36 @@ function! VimwikiFindIncompleteTasks()
   lopen
 endfunction
 
-" Taskwiki - Syntax
-let g:taskwiki_markup_syntax = 'markdown'
+" Vimwiki - Folding
+let g:vimwiki_folding = 'expr'
 
-" Taskwiki - Don't conceal
-let g:taskwiki_disable_concealcursor = 'yes'
+" C/C++ Autocomplete
+let g:clang_library_path="/Library/Developer/CommandLineTools/usr/lib/libclang.dylib"
+
+" Vimtex 
+let g:vimtex_view_method = 'skim'
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+" Zotcite
+let zotcite_filetypes = ['markdown', 'pandoc', 'rmd', 'vimwiki']
+
+" Zotcite - Enable Conceal and highlighting
+autocmd FileType vimwiki source ~/.local/share/nvim/plugged/zotcite/after/syntax/markdown.vim
+
+" Zotcite - Open pdf in Zotero
+let zotcite_open_in_zotero = 1
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+" Github Copilot
+let g:copilot_enabled = 1
+
+let g:copilot_filetypes = {
+  \ 'markdown': v:true,
+  \ }
