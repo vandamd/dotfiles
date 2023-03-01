@@ -25,6 +25,7 @@ cask "iterm2"                       # Terminal
 cask "obsidian"                     # Note Taking App
 cask "spotify"                      # Music
 cask "visual-studio-code"           # IDE
+cask "figma"                        # Design
 
 # Tools/Misc
 cask "dozer"                        # Hide Menu Bar Icons

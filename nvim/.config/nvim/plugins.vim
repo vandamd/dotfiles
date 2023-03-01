@@ -28,4 +28,7 @@ Plug 'honza/vim-snippets'
 " GitHub Copilot
 Plug 'github/copilot.vim'
 
+" Snazzy Theme
+Plug 'connorholyday/vim-snazzy'
+
 call plug#end()
