@@ -1,21 +1,13 @@
 # This is Vandam Dinh's zsh configuration file
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Theme 
-ZSH_THEME="gentoo"
-
 # Case insensitive completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# Auto cd
+setopt auto_cd
+
+# Plugins
 plugins=(git)
 
 # Aliases
@@ -31,6 +23,7 @@ alias d="cd && cd Developer"
 alias re="cd && cd Developer/Repositories"
 alias v="nvim"
 alias vim="nvim"
+alias omni="sudo /Applications/OmniDiskSweeper.app/Contents/MacOS/OmniDiskSweeper"
 
 # Wiki
 alias wiki="cd && nvim vimwiki/index.md"

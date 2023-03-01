@@ -1,15 +1,15 @@
 if type git > /dev/null; then
-    git clone https://github.com/vandamd/dotfiles ~/Downloads/dotfiles
-    chmod +x ~/Downloads/dotfiles/install.sh
-    cd ~/Downloads/dotfiles
+    git clone https://github.com/vandamd/dotfiles ~/
+    chmod +x ~/dotfiles/*
+    cd ~/dotfiles
     ./install.sh
 else
-    cd ~/Downloads
+    cd ~/
     curl -LO https://github.com/vandamd/dotfiles/archive/master.zip
     unzip master.zip
     rm -rf master.zip
-    mv dotfiles-main ~/Downloads/dotfiles
-    chmod +x ~/Downloads/dotfiles/install.sh
-    cd ~/Downloads/dotfiles
+    mv dotfiles-main ~/dotfiles
+    chmod +x ~/dotfiles/*
+    cd ~/dotfiles
     ./install.sh
 fi

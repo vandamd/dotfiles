@@ -5,6 +5,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
 
 cask_args appdir: "/Applications"
 
@@ -23,18 +24,21 @@ cask "arc"                          # Browser
 cask "iterm2"                       # Terminal
 cask "obsidian"                     # Note Taking App
 cask "spotify"                      # Music
+cask "visual-studio-code"           # IDE
 
 # Tools/Misc
 cask "dozer"                        # Hide Menu Bar Icons
 cask "imageoptim"                   # Image Optimiser Tool
 cask "inkscape"                     # Drawing Tool
-cask "karabiner-elements"           # Keyboard Remapper
+cask "karabiner-elements"           # Keyboard Re-mapper
 cask "keka"                         # Archiver
 cask "pictogram"                    # App Icon Changer
 cask "raycast"                      # Spotlight Alternative
 cask "shottr"                       # Screenshot Tool
 cask "skim"                         # PDF Reader
 cask "steelseries-exactmouse-tool"  # Raw Mouse Acceleration
+cask "font-fira-code-nerd-font"     # Terminal Font
+cask "omnidisksweeper"              # Storage Tool
 
 # App Store
 mas "Pure Paste", id: 1611378436    # Clipboard Manager
