@@ -40,6 +40,7 @@ cask "skim"                         # PDF Reader
 cask "steelseries-exactmouse-tool"  # Raw Mouse Acceleration
 cask "font-fira-code-nerd-font"     # Terminal Font
 cask "omnidisksweeper"              # Storage Tool
+cask "zotero"                       # Reference Manager
 
 # App Store
 mas "Pure Paste", id: 1611378436    # Clipboard Manager
