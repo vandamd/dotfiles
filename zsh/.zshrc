@@ -24,16 +24,9 @@ alias re="cd && cd Developer/Repositories"
 alias v="nvim"
 alias vim="nvim"
 alias omni="sudo /Applications/OmniDiskSweeper.app/Contents/MacOS/OmniDiskSweeper"
-
-# Wiki
-alias wiki="cd && nvim vimwiki/index.md"
-alias q="cd && nvim vimwiki/Scratchpad.md"
-
-# Starship
-eval "$(starship init zsh)"
-
-# FUCK
-eval $(thefuck --alias)
+alias e="/opt/homebrew/Cellar/emacs-mac/emacs-28.2-mac-9.1/Emacs.app/Contents/MacOS/Emacs"
+alias p="ping vandam.tech"
+alias q="cd && nvim todo.md"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"

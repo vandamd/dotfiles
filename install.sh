@@ -18,7 +18,6 @@ install_brew() {
 create_dirs() {
     declare -a dirs=(
         "~/Library/Mobile\ Documents/com~apple~CloudDocs/Developer"
-        "~/Library/Mobile\ Documents/com~apple~CloudDocs/vimwiki"
         "~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/Work/University\ of\ Bristol/Year\ 2/"
     )
 

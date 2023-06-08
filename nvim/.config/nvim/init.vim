@@ -4,11 +4,6 @@
 "   2. plugins.vim - Where I install my plugins
 "   3. plugins_config.vim - Where I configure my plugins
 
-
-
-
-
-
 " ------ General Settings ------
 let mapleader = ","
 nmap <leader>w :w!<cr>
@@ -73,24 +68,13 @@ hi SpellLocal cterm=underline ctermfg=green
 hi Conceal ctermfg=blue 
 hi MatchParen ctermbg=232 ctermfg=red 
 
-
 " ------ Keybinds ------
-" Toggle NERDTree
-nnoremap <C-t> :NERDTreeToggle<CR>
-
 " Tab Navigation
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
-" VimWiki
-nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
-nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
-
 " ------ Plugins ------
 source ~/.config/nvim/plugins.vim
-
-
-
 
 " ------ Plugin Config ------
 source ~/.config/nvim/plugins_config.vim
