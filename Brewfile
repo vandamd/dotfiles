@@ -14,6 +14,7 @@ brew "zola"                         # Static Site Generator
 brew "pyenv"                        # Python Version Manager
 brew "python"                       # Python
 brew "stow"                         # Symlink Manager
+brw "bitwarden-cli"                 # Password Manager
 
 # Applications
 cask "arc"                          # Browser
