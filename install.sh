@@ -17,8 +17,8 @@ install_brew() {
 
 create_dirs() {
     declare -a dirs=(
-        "~/Library/Mobile\ Documents/com~apple~CloudDocs/Developer"
-        "~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/Work/University\ of\ Bristol/Year\ 2/"
+        "~/Library/Mobile Documents/com~apple~CloudDocs/Developer"
+        "~/Library/Mobile Documents/com~apple~CloudDocs/Documents/Work/University of Bristol/Year 2/"
     )
 
     for i in "${dirs[@]}"; do
@@ -48,4 +48,4 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 printf "🐗  Stow dotfiles\n"
-stow karabiner nvim zsh 
+stow nvim zsh 

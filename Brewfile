@@ -14,13 +14,14 @@ brew "zola"                         # Static Site Generator
 brew "pyenv"                        # Python Version Manager
 brew "python"                       # Python
 brew "stow"                         # Symlink Manager
-brw "bitwarden-cli"                 # Password Manager
+brew "bitwarden-cli"                 # Password Manager
 
 # Applications
 cask "arc"                          # Browser
 cask "iterm2"                       # Terminal
 # cask "spotify"                      # Music
 cask "visual-studio-code"           # IDE
+cask "sketch"                       # Design
 
 # Tools/Misc
 cask "dozer"                        # Hide Menu Bar Icons
@@ -32,5 +33,5 @@ cask "shottr"                       # Screenshot Tool
 cask "hyperkey"                     # Hyper Key
 
 # App Store
-mas "Pure Paste", id: 1611378436    # Clipboard Manager
+# mas "Pure Paste", id: 1611378436    # Clipboard Manager
 mas "Sleeve", id: 1606145041        # Mini Player
