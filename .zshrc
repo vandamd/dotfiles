@@ -1,4 +1,4 @@
-# This is Vandam Dinh's zsh configuration file
+# Vandam's zsh config file
 
 # Case insensitive completion
 autoload -Uz compinit && compinit
@@ -28,7 +28,4 @@ alias e="/opt/homebrew/Cellar/emacs-mac/emacs-28.2-mac-9.1/Emacs.app/Contents/Ma
 alias p="ping vandam.tech"
 alias q="cd && nvim todo.md"
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+eval "$(starship init zsh)"
