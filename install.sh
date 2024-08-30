@@ -5,7 +5,7 @@ install_brew() {
         printf "Homebrew not found, installing."
         # install homebrew
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        # set path
+        (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> ~/.profile
         eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
 
@@ -42,4 +42,4 @@ printf "Setting macOS preferences\n"
 ./.macos
 
 printf "🐗  Stow dotfiles\n"
-stow .
+stow -t ~/ --adopt .zshrc nvim

@@ -1,10 +1,8 @@
 # Vandam's Brewfile
 
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
 tap "homebrew/services"
-tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
 
 cask_args appdir: "/Applications"
 
