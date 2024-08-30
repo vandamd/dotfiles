@@ -1,6 +1,6 @@
 if type git > /dev/null; then
     mkdir ~/src
-    git clone https://github.com/vandamd/dotfiles ~/src
+    git clone https://github.com/vandamd/dotfiles ~/src/dotfiles
     chmod +x ~/src/dotfiles/*
     cd ~/src/dotfiles
     ./install.sh
