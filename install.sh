@@ -43,4 +43,4 @@ printf "Setting macOS preferences\n"
 ./.macos
 
 printf "🐗  Stow dotfiles\n"
-stow -t ~/ --adopt .zshrc nvim
+stow -t ~/ --adopt zsh nvim
