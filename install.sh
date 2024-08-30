@@ -3,11 +3,12 @@
 install_brew() {
     if ! command -v "brew" &> /dev/null; then
         printf "Homebrew not found, installing."
-        # install homebrew
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> ~/.profile
-        eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
+    
+    printf "Post-homebrew install commands"
+    (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> ~/.profile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
     sudo softwareupdate --install-rosetta
 
