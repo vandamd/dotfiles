@@ -35,6 +35,9 @@ xcode-select --install
 printf "Installing Homebrew\n"
 install_brew
 
+printf "Installing Zim"
+curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+
 printf "Setting macOS preferences\n"
 ./.macos
 

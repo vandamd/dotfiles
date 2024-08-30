@@ -13,6 +13,9 @@ brew "zola"                         # Static Site Generator
 brew "pyenv"                        # Python Version Manager
 brew "python"                       # Python
 brew "stow"                         # Symlink Manager
+brew "yt-dlp"			    # Useful audio downloader
+brew "nvim"
+brew "font-fira-code-nerd-font"
 
 # Applications
 cask "arc"                          # Browser

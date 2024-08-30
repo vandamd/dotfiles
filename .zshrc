@@ -72,9 +72,3 @@ alias v="nvim"
 alias vim="nvim"
 alias p="ping vandamdinh.com"
 alias sc="yt-dlp --extract-audio --audio-format mp3 --embed-metadata --embed-thumbnail --convert-thumbnail jpg --output '~/tunes/%(title)s.%(ext)s'"
-
-source <(fzf --zsh)
-export PATH="$HOME/.cargo/bin:$PATH"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"

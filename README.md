@@ -1,5 +1,8 @@
 # Vandam's Dotfiles
 
-- [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [Starships](https://github.com/starship/starship)
-- [FiraCode Nerd Font](https://www.nerdfonts.com/font-downloads)
+### Installation
+1. Give terminal full disk access in `System Preferences > Privacy & Security > Full Disk Access`.
+2. Install via: 
+```
+curl -L https://raw.githubusercontent.com/vandamd/dotfiles/main/run.sh | sh
+```  
