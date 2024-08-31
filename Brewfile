@@ -14,6 +14,7 @@ brew "stow"                         # Symlink Manager
 brew "yt-dlp"			    # Useful audio downloader
 brew "nvim"
 brew "font-fira-code-nerd-font"
+brew "fzf"
 
 # Applications
 cask "arc"                          # Browser
