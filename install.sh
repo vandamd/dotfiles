@@ -7,7 +7,7 @@ install_brew() {
     fi
     
     printf "Post-homebrew install commands\n"
-    (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> Users/vandam/.profile
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/vandam/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
     sudo softwareupdate --install-rosetta
