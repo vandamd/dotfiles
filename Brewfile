@@ -10,7 +10,7 @@ brew "zola"                         # Static Site Generator
 brew "pyenv"                        # Python Version Manager
 brew "python"                       # Python
 brew "stow"                         # Symlink Manager
-brew "yt-dlp"			                  # Useful audio downloader
+brew "yt-dlp"			            # Useful audio downloader
 brew "nvim"
 brew "fzf"
 brew "nvim"
