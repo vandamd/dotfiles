@@ -72,6 +72,20 @@ alias v="nvim"
 alias vim="nvim"
 alias p="ping vandamdinh.com"
 alias sc="yt-dlp --extract-audio --audio-format mp3 --embed-metadata --embed-thumbnail --convert-thumbnail jpg --output '~/tunes/%(title)s.%(ext)s'"
+alias cs='
+selected=$(find ~/src/* -maxdepth 0 -type d | while read dir; do
+    if [ -d "$dir/.git" ]; then
+        branch=$(git -C "$dir" rev-parse --abbrev-ref HEAD 2>/dev/null)
+        echo "$(echo $dir | sed "s|$HOME/src/|~/|") [$branch]"
+    else
+        echo "$(echo $dir | sed "s|$HOME/src/|~/|")"
+    fi
+done | fzf | sed "s| \[[^]]*\]$||" | sed "s|~|$HOME/src|");
+if [ -d "$selected" ]; then
+    cd "$selected"
+else
+    echo "Not a directory"
+fi'
 
 source <(fzf --zsh)
 

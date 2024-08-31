@@ -20,7 +20,7 @@ cask "arc"                          # Browser
 cask "iterm2"                       # Terminal
 cask "spotify"                      # Music
 cask "cursor"           	        # IDE
-brew "linear"
+cask "font-sf-mono"
 
 # Tools/Misc
 cask "dozer"                        # Hide Menu Bar Icons
