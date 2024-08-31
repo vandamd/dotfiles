@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 install_brew() {
     if ! command -v "brew" &> /dev/null; then
