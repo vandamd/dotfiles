@@ -8,6 +8,7 @@ cask_args appdir: "/Applications"
 # CLI Tools
 brew "zola"                         # Static Site Generator
 brew "pyenv"                        # Python Version Manager
+brew "pyenv-virtualenv"
 brew "python"                       # Python
 brew "stow"                         # Symlink Manager
 brew "yt-dlp"			            # Useful audio downloader
