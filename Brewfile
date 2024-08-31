@@ -14,13 +14,13 @@ brew "stow"                         # Symlink Manager
 brew "yt-dlp"			            # Useful audio downloader
 brew "nvim"
 brew "fzf"
-brew "nvim"
 
 # Applications
 cask "arc"                          # Browser
 cask "iterm2"                       # Terminal
 cask "spotify"                      # Music
-cask "cursor"           	    # IDE
+cask "cursor"           	        # IDE
+brew "linear"
 
 # Tools/Misc
 cask "dozer"                        # Hide Menu Bar Icons
