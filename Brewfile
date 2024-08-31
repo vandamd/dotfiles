@@ -15,6 +15,7 @@ brew "yt-dlp"			    # Useful audio downloader
 brew "nvim"
 brew "font-fira-code-nerd-font"
 brew "fzf"
+brew "nvim"
 
 # Applications
 cask "arc"                          # Browser
