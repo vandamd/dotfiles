@@ -1,17 +1,17 @@
+#!/bin/bash
+
+mkdir -p ~/Developer
+
 if type git > /dev/null; then
-    mkdir ~/src
-    git clone https://github.com/vandamd/dotfiles ~/src/dotfiles
-    chmod +x ~/src/dotfiles/*
-    cd ~/src/dotfiles
-    ./install.sh
+    git clone https://github.com/vandamd/dotfiles ~/Developer/dotfiles
 else
-    mkdir ~/src
-    cd ~/src
-    curl -LO https://github.com/vandamd/dotfiles/archive/master.zip
-    unzip master.zip
-    rm -rf master.zip
-    mv dotfiles-main ~/src/dotfiles
-    chmod +x ~/src/dotfiles/*
-    cd ~/src/dotfiles
-    ./install.sh
+    cd ~/Developer
+    curl -LO https://github.com/vandamd/dotfiles/archive/main.zip
+    unzip main.zip
+    rm -rf main.zip
+    mv dotfiles-main dotfiles
 fi
+
+chmod +x ~/Developer/dotfiles/*
+cd ~/Developer/dotfiles
+./install.sh
