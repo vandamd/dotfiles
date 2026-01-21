@@ -40,7 +40,7 @@ printf "Setting macOS preferences\n"
 ./.macos
 
 printf "🐗  Stow dotfiles\n"
-stow -t ~/ --adopt zsh nvim
+stow -t ~/ --adopt --no-folding zsh nvim
 
 printf "Installing Zim"
 curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh

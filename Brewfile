@@ -17,7 +17,7 @@ brew "fzf"
 
 # Applications
 cask "arc"                          # Browser
-cask "iterm2"                       # Terminal
+cask "ghostty"                       # Terminal
 cask "spotify"                      # Music
 cask "cursor"           	        # IDE
 cask "font-sf-mono"

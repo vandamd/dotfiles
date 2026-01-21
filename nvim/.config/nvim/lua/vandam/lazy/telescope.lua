@@ -1,7 +1,7 @@
 return {
     "nvim-telescope/telescope.nvim",
 
-    tag = "0.1.6",
+    tag = "0.1.7",
 
     dependencies = {
         "nvim-lua/plenary.nvim"
@@ -9,7 +9,9 @@ return {
 
     config = function()
         local builtin = require('telescope.builtin')
-        vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+        vim.keymap.set('n', '<leader>pf', function()
+            builtin.find_files({ hidden = true })
+        end, {})
         vim.keymap.set('n', '<C-p>', builtin.git_files, {})
         vim.keymap.set('n', '<leader>pg', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>ps', builtin.lsp_document_symbols, {})

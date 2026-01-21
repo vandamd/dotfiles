@@ -1,93 +1,60 @@
-# -----------------
-# Zsh configuration
-# -----------------
-
-#
-# History
-#
-
-# Remove older command from the history if a duplicate is to be added.
-setopt HIST_IGNORE_ALL_DUPS
-
-# Set editor default keymap to emacs (`-e`) or vi (`-v`)
-bindkey -v
-
-# Prompt for spelling correction of commands.
-setopt CORRECT
-
-# Remove path separator from WORDCHARS.
-WORDCHARS=${WORDCHARS//[\/]}
-
-# Set a custom prefix for the generated aliases. The default prefix is 'G'.
-zstyle ':zim:git' aliases-prefix 'g'
-
-# Disable automatic widget re-binding on each precmd. This can be set when
-# zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
-ZSH_AUTOSUGGEST_MANUAL_REBIND=1
-
-# Set what highlighters will be used.
-# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
-# ------------------
-# Initialize modules
-# ------------------
-
-ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-# Download zimfw plugin manager if missing.
-if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
-  if (( ${+commands[curl]} )); then
-    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-  else
-    mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-  fi
-fi
-# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  source ${ZIM_HOME}/zimfw.zsh init -q
-fi
-# Initialize modules.
+ZIM_HOME=~/.zim
 source ${ZIM_HOME}/init.zsh
+[[ -f ~/.secrets ]] && source ~/.secrets
 
-zmodload -F zsh/terminfo +p:terminfo
-# Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
-for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
-for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search-down
-for key ('k') bindkey -M vicmd ${key} history-substring-search-up
-for key ('j') bindkey -M vicmd ${key} history-substring-search-down
-unset key
-# }}} End configuration added by Zim install
-
-# --- Vandam's zsh config file ---
-
-# Aliases
-alias zshconfig="nvim ~/.zshrc"
-alias vimconfig="cd ~/.config/nvim/ && vim ."
-alias alaconf="nvim ~/.config/alacritty/alacritty.toml"
-alias d="cd && cd Developer"
-alias re="cd && cd Developer/Repositories"
+alias d="cd ~/Developer"
+alias dev='proj ~/Developer true'
+alias c='proj ~/Developer'
+alias y="cd ~/Year\ 5"
+alias o="open ."
+alias uni='proj ~/Year\ 5'
 alias v="nvim"
 alias vim="nvim"
-alias p="ping vandamdinh.com"
-alias sc="yt-dlp --extract-audio --audio-format mp3 --embed-metadata --embed-thumbnail --convert-thumbnail jpg --output '~/tunes/%(title)s.%(ext)s'"
-alias cs='
-selected=$(find ~/src/* -maxdepth 0 -type d | while read dir; do
+alias q="nvim ~/quicknote.md"
+alias zshconfig="nvim ~/.zshrc"
+alias vimconfig="cd ~/.config/nvim/ && nvim ."
+alias gconfig="nvim /Users/vandam/Library/Application\ Support/com.mitchellh.ghostty/config"
+alias gst='git status'
+alias gaa='git add .'
+alias cl='function _cl() { git clone "$1" ~/Developer/$(basename "$1" .git); }; _cl'
+alias cc="claude --dangerously-skip-permissions"
+alias bi='brew install --cask'
+alias act='source .venv/bin/activate'
+alias build='bun run sync-android-version && bunx expo run:android'
+alias sc="yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --convert-thumbnail jpg --output '~/Music/Tunes/%(title)s.%(ext)s'"
+alias dj="yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --convert-thumbnail jpg --output '~/Music/DJ/%(title)s.%(ext)s'"
+alias yt="yt-dlp --format mp4 --embed-metadata --embed-thumbnail --convert-thumbnail jpg --output '~/Videos/%(title)s.%(ext)s'"
+alias confetti='open raycast://extensions/raycast/raycast/confetti'
+
+proj() {
+  local base_dir="${1:-$HOME/Developer}"
+  local open_editor="${2:-false}"
+  local selected=$(find "$base_dir"/* -maxdepth 0 -type d 2>/dev/null | while read dir; do
+    local name="${dir##*/}"
     if [ -d "$dir/.git" ]; then
-        branch=$(git -C "$dir" rev-parse --abbrev-ref HEAD 2>/dev/null)
-        echo "$(echo $dir | sed "s|$HOME/src/|~/|") [$branch]"
+      branch=$(git -C "$dir" rev-parse --abbrev-ref HEAD 2>/dev/null)
+      echo "$name [$branch]"
     else
-        echo "$(echo $dir | sed "s|$HOME/src/|~/|")"
+      echo "$name"
     fi
-done | fzf | sed "s| \[[^]]*\]$||" | sed "s|~|$HOME/src|");
-if [ -d "$selected" ]; then
-    cd "$selected"
-else
-    echo "Not a directory"
-fi'
+  done | fzf | sed "s| \[[^]]*\]$||")
+  [[ -n "$selected" ]] && cd "$base_dir/$selected" && [[ "$open_editor" == "true" ]] && nvim .
+}
 
-source <(fzf --zsh)
+apk() {
+  local name=$(node -p "require('./app.json').expo.name.toLowerCase()")
+  local version=$(node -p "require('./app.json').expo.version")
+  bun run sync-android-version && \
+  eas build -p android --profile production --local --output ~/Downloads/${name}_v${version}.apk
+}
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+[ -s "/Users/vandam/.bun/_bun" ] && source "/Users/vandam/.bun/_bun"
+export EDITOR=nvim
+export BUN_INSTALL="$HOME/.bun"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_NDK_HOME="/opt/homebrew/share/android-ndk"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+

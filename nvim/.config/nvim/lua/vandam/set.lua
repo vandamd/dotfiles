@@ -19,6 +19,7 @@ vim.opt.undofile = true
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
 
 vim.opt.termguicolors = true
 
@@ -28,11 +29,12 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
-
-vim.g.mapleader = " "
-
 vim.opt.showmode = false
+
+vim.diagnostic.config({ virtual_text = true })
+
+vim.opt.list = true
+vim.opt.listchars = 'tab:▸\\ ,trail:·,extends:»,precedes:«'
 
 vim.api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight when yanking (copying) text',

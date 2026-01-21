@@ -1,10 +1,12 @@
 return {
-    "ellisonleao/gruvbox.nvim",
+    "anAcc22/sakura.nvim",
     dependencies = {
         "xiyaowong/transparent.nvim",
+        "rktjmp/lush.nvim"
     },
 
     config = function()
-        vim.cmd("colorscheme gruvbox")
+        vim.opt.background = "dark"
+        vim.cmd("colorscheme sakura")
     end
 }

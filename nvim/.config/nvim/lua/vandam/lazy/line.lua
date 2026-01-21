@@ -2,13 +2,9 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-        -- local function get_harpoon_indicator(harpoon_entry)
-        --     return harpoon_entry.value
-        -- end
-
         require('lualine').setup {
             options = {
-                theme = "gruvbox_dark",
+                theme = "everforest",
                 icons_enabled = false,
                 component_separators = "",
                 section_separators = "",
@@ -17,8 +13,8 @@ return {
                 lualine_c = {
                     {
                         "harpoon2",
-                        indicators = { "1", "2", "3", "4", "5", "6", "7", "8" },
-                        active_indicators = { "[1]", "[2]", "[3]", "[4]", "[5]", "[6]", "[7]", "[8]" },
+                        indicators = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" },
+                        active_indicators = { "[1]", "[2]", "[3]", "[4]", "[5]", "[6]", "[7]", "[8]", "[9]", "[0]" },
                     },
                 },
                 lualine_x = { 'filename' },
