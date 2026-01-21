@@ -2,30 +2,67 @@
 
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "oven-sh/bun"
+tap "vandamd/tap"
 
 cask_args appdir: "/Applications"
 
-# CLI Tools
-brew "zola"                         # Static Site Generator
-brew "pyenv"                        # Python Version Manager
-brew "pyenv-virtualenv"
-brew "python"                       # Python
-brew "stow"                         # Symlink Manager
-brew "yt-dlp"			            # Useful audio downloader
+# Tools
+brew "stow"
 brew "nvim"
+brew "starship"
+brew "wget"
+brew "python"
+brew "uv"
+brew "ruff"
+brew "node"
+brew "bun"
 brew "fzf"
+brew "fd"
+brew "ripgrep"
+brew "ast-grep"
+brew "tree"
+brew "yq"
+brew "gh"
+brew "lazygit"
+brew "ffmpeg"
+brew "yt-dlp"
+brew "hyperfine"
+brew "apktool"
 
-# Applications
-cask "arc"                          # Browser
-cask "ghostty"                       # Terminal
-cask "spotify"                      # Music
-cask "cursor"           	        # IDE
+# Apps
+cask "helium-browser"
+cask "ghostty"
+cask "raycast"
+cask "spotify"
+cask "iina"
+cask "obs"
+cask "obsidian"
+cask "figma"
+cask "zotero"
+cask "calibre"
+cask "shottr"
+cask "whisker"
+cask "keka"
+cask "monitorcontrol"
+cask "beeper"
+cask "transmission"
+cask "yaak"
+cask "mitmproxy"
+cask "fork"
+cask "xcodes-app"
+cask "android-studio"
+cask "android-ndk"
+cask "android-platform-tools"
+cask "zulu@17"
+
+# Fonts
+cask "font-commit-mono"
+cask "font-departure-mono"
+cask "font-iosevka"
+cask "font-iosevka-ss05"
+cask "font-jetbrains-mono"
+cask "font-monocraft"
 cask "font-sf-mono"
-
-# Tools/Misc
-cask "dozer"                        # Hide Menu Bar Icons
-cask "pictogram"                    # App Icon Changer
-cask "raycast"                      # Spotlight Alternative
-cask "shottr"                       # Screenshot Tool
-cask "zotero"                       # Reference Manager
-cask "hyperkey"                     # Hyper Key
+cask "font-sf-mono-nerd-font"
+cask "font-tiktok-sans"
