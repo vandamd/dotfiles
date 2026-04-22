@@ -43,3 +43,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         vim.highlight.on_yank()
     end,
 })
+
+local function tex_wrap()
+    if vim.bo.filetype == 'tex' then
+        vim.opt_local.wrap = true
+        vim.opt_local.linebreak = true
+    end
+end
+
+vim.api.nvim_create_autocmd({ 'FileType', 'BufEnter' }, { callback = tex_wrap })
+tex_wrap()
