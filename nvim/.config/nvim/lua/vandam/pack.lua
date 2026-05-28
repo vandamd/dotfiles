@@ -66,7 +66,6 @@ vim.pack.add({
     gh("mfussenegger/nvim-lint"),
     gh("lervag/vimtex"),
     gh("jalvesaq/zotcite"),
-    { src = gh("github/copilot.vim"), version = "release" },
     gh("mbbill/undotree"),
 }, {
     confirm = false,
