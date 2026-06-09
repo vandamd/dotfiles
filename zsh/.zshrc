@@ -26,6 +26,7 @@ alias dj="yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 --embed-me
 alias yt="yt-dlp --format mp4 --embed-metadata --embed-thumbnail --convert-thumbnail jpg --output '~/Videos/%(title)s.%(ext)s'"
 alias confetti='open raycast://extensions/raycast/raycast/confetti'
 alias cr='~/Developer/crossword/crossword'
+alias bw-unlock='export BW_SESSION="$(bw unlock --raw)"'
 
 ts() {
   local selected=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf \
